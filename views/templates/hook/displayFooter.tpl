@@ -85,7 +85,8 @@
     </h4>
   </div>
   <div id="bpxlabs-content">
-    <div>{$mensaje} <a href="https://bioprox.es/content/6-politica-de-cookies" target="_blank">Ver la política de
+    <div id="bpxlabs-message">{$mensaje} <a href="https://bioprox.es/content/6-politica-de-cookies" target="_blank">Ver
+        la política de
         cookies.</a>
 
     </div>
