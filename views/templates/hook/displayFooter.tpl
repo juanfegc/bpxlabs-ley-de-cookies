@@ -9,10 +9,65 @@
 *}
 <!-- Block leycookies -->
 <style>
+  /* ESTILO: VENTANA FLOTANTE */
   #bpxlabs-cookies {
-    /*display: flex;*/
+    position: fixed;
+    width: 420px;
+    z-index: 9999999;
+    bottom: 10px;
+    left: 10px;
+  }
+
+  #bpxlabs-container {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px 26px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #bpxlabs-header {}
+
+  #bpxlabs-message {
+    text-align: justify;
+  }
+
+  #bpxlabs-button {
+    align-self: flex-end;
+  }
+
+  .btn-outline-warning {
+    color: {$color};
+    background-image: none;
+    background-color: transparent;
+    border-color: {$color};
+  }
+
+  .btn-outline-warning:hover {
+    color: #fff;
+    background-color: {$color};
+    border-color: {$color};
+  }
+
+  a:link,
+  a:visited {
+    color: {$color};
+    text-decoration: none;
+  }
+
+  a:hover,
+  a:active {
+    text-decoration: underline;
+  }
+
+  /* ESTILO: FOOTER */
+  /*  
+  #bpxlabs-cookies {
     text-align: center;
-    /*font-size: 12px;*/
     background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
     z-index: 10000;
@@ -24,10 +79,10 @@
   }
 
   .btn-outline-warning {
-    color: {$color};
-    background-image: none;
-    background-color: transparent;
-    border-color: {$color};
+color: {$color};
+  background-image: none;
+  background-color: transparent;
+  border-color: {$color};
   }
 
   .btn-outline-warning:hover {
@@ -58,38 +113,42 @@
     width: 25%;
     display: flex;
   }
+
+  */
 </style>
 
 
 <div id="bpxlabs-cookies">
-  <div id="bpxlabs-header">
-    <h4>
-      {if $imagen eq 1}
-        <img src="modules/bpxleydecookies/views/img/cookie1.png" width="40">
-      {elseif $imagen eq 2}
-        <img src="modules/bpxleydecookies/views/img/cookie2.png" width="40">
-      {elseif $imagen eq 3}
-        <img src="modules/bpxleydecookies/views/img/cookie3.png" width="40">
-      {elseif $imagen eq 4}
-        <img src="modules/bpxleydecookies/views/img/cookie4.png" width="40">
-      {elseif $imagen eq 5}
-        <img src="modules/bpxleydecookies/views/img/cookie5.png" width="40">
-      {elseif $imagen eq 6}
-        <img src="modules/bpxleydecookies/views/img/cookie6.png" width="40">
-      {elseif $imagen eq 7}
-        <img src="modules/bpxleydecookies/views/img/cookie7.png" width="40">
-      {elseif $imagen eq 8}
-        <img src="modules/bpxleydecookies/views/img/cookie8.png" width="40">
-      {/if}
-      {$header}
-    </h4>
-  </div>
-  <div id="bpxlabs-content">
+  <div id="bpxlabs-container">
+
+    <div id="bpxlabs-header">
+      <h4>
+        {if $imagen eq 1}
+          <img src="modules/bpxleydecookies/views/img/cookie1.png" width="40">
+        {elseif $imagen eq 2}
+          <img src="modules/bpxleydecookies/views/img/cookie2.png" width="40">
+        {elseif $imagen eq 3}
+          <img src="modules/bpxleydecookies/views/img/cookie3.png" width="40">
+        {elseif $imagen eq 4}
+          <img src="modules/bpxleydecookies/views/img/cookie4.png" width="40">
+        {elseif $imagen eq 5}
+          <img src="modules/bpxleydecookies/views/img/cookie5.png" width="40">
+        {elseif $imagen eq 6}
+          <img src="modules/bpxleydecookies/views/img/cookie6.png" width="40">
+        {elseif $imagen eq 7}
+          <img src="modules/bpxleydecookies/views/img/cookie7.png" width="40">
+        {elseif $imagen eq 8}
+          <img src="modules/bpxleydecookies/views/img/cookie8.png" width="40">
+        {/if}
+        {$header}
+      </h4>
+    </div>
+
     <div id="bpxlabs-message">{$mensaje} <a href="https://bioprox.es/content/6-politica-de-cookies" target="_blank">Ver
         la política de
         cookies.</a>
-
     </div>
+
     <div id="bpxlabs-button">
       <button type="button" class="btn btn-outline-warning btn-sm" onclick="aceptarCookies()"><i
           class="material-icons">done</i>ACEPTAR</button>
