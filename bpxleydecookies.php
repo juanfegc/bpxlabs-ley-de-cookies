@@ -1,12 +1,11 @@
 <?php
-/**                                                                                       
+/**
 *
-*  ██████  ██  ██████  ██████  ██████   ██████  ██   ██ 
-*  ██   ██ ██ ██    ██ ██   ██ ██   ██ ██    ██  ██ ██  
-*  ██████  ██ ██    ██ ██████  ██████  ██    ██   ███   
-*  ██   ██ ██ ██    ██ ██      ██   ██ ██    ██  ██ ██  
-*  ██████  ██  ██████  ██      ██   ██  ██████  ██   ██ 
-*
+*  ██████  ██  ██████  ██████  ██████   ██████  ██   ██
+*  ██   ██ ██ ██    ██ ██   ██ ██   ██ ██    ██  ██ ██
+*  ██████  ██ ██    ██ ██████  ██████  ██    ██   ███
+*  ██   ██ ██ ██    ██ ██      ██   ██ ██    ██  ██ ██
+*  ██████  ██  ██████  ██      ██   ██  ██████  ██   ██
 *
 *
 * NOTICE OF LICENSE
@@ -14,7 +13,6 @@
 * This product is licensed for one customer to use on one installation (test stores and multishop included).
 * Site developer has the right to modify this module to suit their needs, but can not redistribute the module in
 * whole or in part. Any other use of this module constitues a violation of the user agreement.
-*
 *
 * DISCLAIMER
 *
@@ -68,6 +66,7 @@ class Bpxleydecookies extends Module
         // Preset configuration values
         Configuration::updateValue('BPXLEYDECOOKIES_LIVE_MODE', false);
         Configuration::updateValue('BPXLEYDECOOKIES_TITULO', 'GESTIÓN DE LAS COOKIES');
+        Configuration::updateValue('BPXLEYDECOOKIES_LINK', 'https://bioprox.es/es/content/6-politica-de-cookies');
         Configuration::updateValue('BPXLEYDECOOKIES_MENSAJE', 'Bioprox sólo utiliza las cookies propias estrictamente necesarias para el correcto funcionamiento del sitio web por lo que son necesarias para seguir navegando.  No usamos ningunas cookies de terceros con fines publicitarios.');
         Configuration::updateValue('BPXLEYDECOOKIES_IMAGEN', 0);
         Configuration::updateValue('BPXLEYDECOOKIES_COLOR', '#F9B41E');
@@ -88,6 +87,7 @@ class Bpxleydecookies extends Module
         Configuration::deleteByName('BPXLEYDECOOKIES_LIVE_MODE');
         Configuration::deleteByName('BPXLEYDECOOKIES_MENSAJE');
         Configuration::deleteByName('BPXLEYDECOOKIES_TITULO');
+        Configuration::deleteByName('BPXLEYDECOOKIES_LINK');
         Configuration::deleteByName('BPXLEYDECOOKIES_IMAGEN');
         Configuration::deleteByName('BPXLEYDECOOKIES_COLOR');
 
@@ -193,6 +193,14 @@ class Bpxleydecookies extends Module
                     ),
                     array(
                         'col' => 8,
+                        'type' => 'text',
+                        'prefix' => '<i class="icon icon-anchor"></i>',
+                        'desc' => $this->l('Link a la política de cookies'),
+                        'name' => 'BPXLEYDECOOKIES_LINK',
+                        'label' => $this->l('Link'),
+                    ),
+                    array(
+                        'col' => 8,
                         'type' => 'radio',
                         'desc' => $this->l('Mostrar logo de la cookie junto al título'),
                         'name' => 'BPXLEYDECOOKIES_IMAGEN',
@@ -269,7 +277,8 @@ class Bpxleydecookies extends Module
     {
         return array(
             'BPXLEYDECOOKIES_LIVE_MODE' => Configuration::get('BPXLEYDECOOKIES_LIVE_MODE', true),
-            'BPXLEYDECOOKIES_TITULO' => Configuration::get('BPXLEYDECOOKIES_TITULO', 'TITULO'),
+            'BPXLEYDECOOKIES_TITULO' => Configuration::get('BPXLEYDECOOKIES_TITULO', 'Titulo'),
+            'BPXLEYDECOOKIES_LINK' => Configuration::get('BPXLEYDECOOKIES_LINK', 'Link'),
             'BPXLEYDECOOKIES_MENSAJE' => Configuration::get('BPXLEYDECOOKIES_MENSAJE', 'Mensaje.'),
             'BPXLEYDECOOKIES_IMAGEN' => Configuration::get('BPXLEYDECOOKIES_IMAGEN', 0),
             'BPXLEYDECOOKIES_COLOR' => Configuration::get('BPXLEYDECOOKIES_COLOR', '#F9B41E'),
@@ -340,11 +349,13 @@ class Bpxleydecookies extends Module
 	{
 		$header = Configuration::get('BPXLEYDECOOKIES_TITULO');
 		$mensaje = Configuration::get('BPXLEYDECOOKIES_MENSAJE');
+        $link = Configuration::get('BPXLEYDECOOKIES_LINK');
         $imagen = Configuration::get('BPXLEYDECOOKIES_IMAGEN');
         $color = Configuration::get('BPXLEYDECOOKIES_COLOR');
 
 		$this->context->smarty->assign('header', $header);
 		$this->context->smarty->assign('mensaje', $mensaje);
+		$this->context->smarty->assign('link', $link);
         $this->context->smarty->assign('imagen', $imagen);
         $this->context->smarty->assign('color', $color);
 	}

@@ -1,11 +1,13 @@
-{**                                                                                       
+{*
 *
-*  ██████  ██  ██████  ██████  ██████   ██████  ██   ██ 
-*  ██   ██ ██ ██    ██ ██   ██ ██   ██ ██    ██  ██ ██  
-*  ██████  ██ ██    ██ ██████  ██████  ██    ██   ███   
-*  ██   ██ ██ ██    ██ ██      ██   ██ ██    ██  ██ ██  
-*  ██████  ██  ██████  ██      ██   ██  ██████  ██   ██ 
+*  ██████  ██  ██████  ██████  ██████   ██████  ██   ██
+*  ██   ██ ██ ██    ██ ██   ██ ██   ██ ██    ██  ██ ██
+*  ██████  ██ ██    ██ ██████  ██████  ██    ██   ███
+*  ██   ██ ██ ██    ██ ██      ██   ██ ██    ██  ██ ██
+*  ██████  ██  ██████  ██      ██   ██  ██████  ██   ██
 *
+* @author BIOPROX <juanfer@bioprox.es>
+* @copyright 2022 BIOPROX LABORATORIOS S.C.A.
 *}
 <!-- Block leycookies -->
 <style>
@@ -37,7 +39,8 @@
   }
 
   #bpxlabs-button {
-    align-self: flex-end;
+    align-self: center;
+    margin-top: 10px;
   }
 
   .btn-outline-warning {
@@ -77,7 +80,6 @@
     width: 100%;
     padding: 1rem 1rem 1rem 1rem;
   }
-
   .btn-outline-warning {
 color: {$color};
   background-image: none;
@@ -144,15 +146,15 @@ color: {$color};
       </h4>
     </div>
 
-    <div id="bpxlabs-message">{$mensaje} <a href="https://bioprox.es/content/6-politica-de-cookies" target="_blank">Ver
+    <div id="bpxlabs-message">{$mensaje} <a href="{$link}" target="_blank">Ver
         la política de
         cookies.</a>
     </div>
 
     <div id="bpxlabs-button">
       <button type="button" class="btn btn-outline-warning btn-sm" onclick="aceptarCookies()"><i
-          class="material-icons">done</i>ACEPTAR</button>
-      {*<button type="button" class="btn btn-outline-primary btn-sm"><i class="material-icons">tune</i>Configurar</button>*}
+          class="material-icons">done</i> ACEPTAR</button>
+      {*<button type="button" class="btn btn-outline-warning btn-sm"><i class="material-icons">tune</i>Configurar</button>*}
     </div>
   </div>
 
