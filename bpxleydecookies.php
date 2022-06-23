@@ -67,7 +67,7 @@ class Bpxleydecookies extends Module
         Configuration::updateValue('BPXLEYDECOOKIES_LIVE_MODE', false);
         Configuration::updateValue('BPXLEYDECOOKIES_TITULO', 'GESTIÓN DE LAS COOKIES');
         Configuration::updateValue('BPXLEYDECOOKIES_LINK', 'https://bioprox.es/es/content/6-politica-de-cookies');
-        Configuration::updateValue('BPXLEYDECOOKIES_MENSAJE', 'Bioprox sólo utiliza las cookies propias estrictamente necesarias para el correcto funcionamiento del sitio web por lo que son necesarias para seguir navegando.  No usamos ningunas cookies de terceros con fines publicitarios.');
+        Configuration::updateValue('BPXLEYDECOOKIES_MENSAJE', 'Bioprox sólo utiliza las cookies técnico-funcionales propias estrictamente necesarias para el correcto funcionamiento del sitio web por lo que son necesarias para seguir navegando.  No usamos ningunas cookies de terceros con fines publicitarios.');
         Configuration::updateValue('BPXLEYDECOOKIES_IMAGEN', 0);
         Configuration::updateValue('BPXLEYDECOOKIES_COLOR', '#F9B41E');
        
